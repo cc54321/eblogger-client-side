@@ -1,36 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
-
 import { useState, useEffect } from 'react';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from './Pages/HomePage';
+import NewBlog from './Pages/NewBlog';
 import BlogPage from './Pages/BlogPage';
+import Layout from './Layouts/Layout';
+import BlogCard from './Components/BlogCard';
+import NavBar from './Components/NavBar';
 import axios from 'axios';
+
 
 const urlEndPoint = process.env.REACT_APP_URL_ENDPOINT;
 
-function App() {  
+function App() {
 
-  //set up hooks for the state 
-  const [toDoList, setToDoList] = useState([]);
+  const [BlogCard, setBlogCard] = useState([]);
   const [shouldRefresh, setShouldRefresh] = useState(false);
 
-
-  //load the todo items from the back end 
-  useEffect(() => {
-    axios.get(`${urlEndPoint}/todos/all`)
-    .then(function (response) {
+  useEffect(()=> {
+    axios.get(`${urlEndPoint}/Blogs/`)
+    .then(function (response){
       console.log(response);
-      setToDoList(response.data.todos);
+      setBlogCard(response.data.blogs);
+      
     })
-    .catch(function (error) {
+    .catch(function (error){
       console.log(error);
     })
-    .finally(function () {
-      // always executed
-    });
-  
+    .finally(function (){
+      //always executed
+    })
+
   },[])
+  
 
   const router = createBrowserRouter([
     {
@@ -40,27 +41,36 @@ function App() {
         {
           index: true,
           element: <HomePage 
-            toDoList={toDoList} 
+            BlogCard={BlogCard} 
             urlEndPoint={urlEndPoint} 
             setShouldRefresh={setShouldRefresh}
           />
 
         },
         { 
-          path: "todo-form",
-          element: <ToDoFormPage urlEndPoint={urlEndPoint} setShouldRefresh={setShouldRefresh}/>
+          path: "/new-blog",
+          element: <NewBlog 
+          urlEndPoint={urlEndPoint} 
+          setShouldRefresh={setShouldRefresh}/>
+        },
+        { 
+          path: "/blog-page",
+          element: <BlogPage
+          urlEndPoint={urlEndPoint} 
+          setShouldRefresh={setShouldRefresh}/>
         }
+
       ]
 
     }
   ])
 
 
-  return (
+  return(
     <div className="App-header">
       <RouterProvider router={router} />
     </div>
-  );
+  ); 
 }
 
 export default App;
