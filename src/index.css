@@ -7,7 +7,83 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+
+.nav-main {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  gap: 3em;
+  background-color: #fff;
+  padding: 0 100px 0 50px;
+  margin: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 0 20px lightgrey;
+}
+
+.nav-main a {
+  text-decoration: none;
+  color: rgb(70, 70, 70);
+}
+
+.home-title {
+  font-size: xx-large;
+  color: rgb(0, 0, 0);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  margin-right: 100px;
+}
+
+.main-content {
+  margin: 140px;
+}
+
+.blogs {
+  width: 100%;
+}
+
+.blog-card {
+  border-bottom: 4px solid rgb(154, 154, 154);
+  margin: 0 10%;
+  padding: 10px 50px 20px;
+  min-width: 200px;
+}
+
+.blog-card:hover {
+  background-color: rgb(236, 236, 236);
+  cursor: pointer;
+}
+
+.blog-card * {
+  margin: 0;
+  padding: .1em;
+}
+
+.blog-card a {
+  text-decoration: none;
+  color: black;
+}
+
+.new-blog-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  margin: auto;
+  border: 1px solid black;
+}
+
+.new-blog-form > * {
+  margin: 1em;
+}
+
+.back-link {
+  text-decoration: none;
+  color: black;
 }
