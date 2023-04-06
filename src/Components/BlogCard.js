@@ -1,18 +1,16 @@
-import { useState } from "react";
-import axios from 'axios';
 
+import axios from 'axios';
+import Button from 'react-bootstrap/Button';
 const urlEndPoint = process.env.REACT_APP_URL_ENDPOINT;
 
 const BlogCard =(props)=>{
-    const [show, setShow] = useState(false);
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+
     const { setShouldRefresh } = props;
 
 
 
     const {blogList} = props;
-    
+    // console.log(blogList)
 
 
     const deletePost = (id)=>{
@@ -22,7 +20,7 @@ const BlogCard =(props)=>{
         .then(function (response) {
             setShouldRefresh(false);
         },{
-          'Content-Type': 'application/urlencoded'
+          'Content-Type': 'application/x-www-form-urlencoded'
         })
         .catch(function (error) {
           console.log(error);
@@ -41,9 +39,13 @@ const BlogCard =(props)=>{
                 <h4>Modified: {blog.lastModified}</h4>
                 <p>{blog.text}</p>
                 <p>Categories: {blog.categories.join(", ")}</p>
-                
+                <Button variant="primary">View</Button>{' '}
+                <div id="card-buttons">
+                     <Button variant="danger" onClick={()=>{ 
+                        deletePost(blog.id)
+                    }}>Delete</Button>
 
-                
+                </div>
     
             </div>
 

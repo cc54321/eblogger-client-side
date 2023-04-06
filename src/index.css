@@ -1,14 +1,47 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+body{
+  display: flex;
+  justify-content: center;
+}
+#pageHeader{
+text-align: center;
+font-size: xx-large;
+color: rgb(0, 0, 0);
+
 }
 
 
+#cardContainer{
+  width: auto;
+  height: auto;
+  background-color: rgb(174, 239, 189);
+  border: 2px black solid;
+  margin: 10px 10px 10px 10px;
+}
 
+#card-buttons{
+white-space: nowrap;
+display: inline-block;
+}
+
+#blogCardsContainer{
+  /* border: 5px dashed black; */
+
+  width: 900px;
+  height: auto;
+
+}
+
+
+#blog-form{
+  width: auto;
+  height: auto;
+  /* border: 5px dashed black; */
+
+
+}
+#navBar{
+  justify-content: center;
+}
 .nav-main {
   position: fixed;
   display: flex;
@@ -23,14 +56,14 @@ body {
   box-shadow: 0 0 20px lightgrey;
 }
 
-.nav-main a {
-  text-decoration: none;
-  color: rgb(70, 70, 70);
-}
-
 .home-title {
   font-size: xx-large;
   color: rgb(0, 0, 0);
+}
+
+.nav-main a {
+  text-decoration: none;
+  color: rgb(70, 70, 70);
 }
 
 .nav-links {
@@ -38,14 +71,6 @@ body {
   align-items: center;
   gap: 2em;
   margin-right: 100px;
-}
-
-.main-content {
-  margin: 140px;
-}
-
-.blogs {
-  width: 100%;
 }
 
 .blog-card {
@@ -65,10 +90,6 @@ body {
   padding: .1em;
 }
 
-.blog-card a {
-  text-decoration: none;
-  color: black;
-}
 
 .new-blog-form {
   display: flex;
@@ -83,7 +104,6 @@ body {
   margin: 1em;
 }
 
-.back-link {
-  text-decoration: none;
-  color: black;
-}
+
+
+

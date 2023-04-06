@@ -1,4 +1,4 @@
-import { useState } from "react";
+//import { useState } from "react";
 import BlogCard from "../Components/BlogCard";
 
 //home page component 
@@ -13,3 +13,4 @@ const HomePage = (props) => {
 }
 
 export default HomePage
+

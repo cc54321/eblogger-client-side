@@ -1,9 +1,5 @@
 
-import axios from 'axios';
-import { useState } from 'react';
-import { useNavigate  } from 'react-router-dom';
-
-import NewBlogForm from '../Components/CreateBlogForm';
+import NewBlogForm from '../Components/NewBlogForm';
 
 
 const NewBlogPage = (props) =>{
@@ -16,3 +12,4 @@ const NewBlogPage = (props) =>{
 }
 
 export default NewBlogPage;
+
