@@ -1,9 +1,15 @@
+
+
 import { useState, useEffect } from 'react';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from './Pages/HomePage';
 import NewBlogPage from './Pages/NewBlogPage';
 import Layout from './Layouts/Layouts';
 import axios from 'axios';
+import Login from './Pages/Login';
+import Register from './Pages/Register';
+
+
 const urlEndPoint = process.env.REACT_APP_URL_ENDPOINT;
 function App() {
 
@@ -42,11 +48,26 @@ function App() {
 
         },
         { 
-          path: "/create-one",
+          path: "/new-blog",
           element: <NewBlogPage 
           urlEndPoint={urlEndPoint} 
           setShouldRefresh={setShouldRefresh}/>
+        }.element,
+
+        { 
+          path: "/login",
+          element: <Login 
+          urlEndPoint={urlEndPoint} 
+          setShouldRefresh={setShouldRefresh}/>
+        },
+
+        { 
+          path: "/register",
+          element: <Register 
+          urlEndPoint={urlEndPoint} 
+          setShouldRefresh={setShouldRefresh}/>
         }
+    
         
 
       ]
